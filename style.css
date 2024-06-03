@@ -4,10 +4,6 @@
     font-family: 'Seymour One', sans-serif;
     box-sizing: border-box;
 }
-
-:root{
-    --main: #ffffff;
-  }
   body {
     background-color: black;
     font-family: monospace;
@@ -72,12 +68,12 @@
   }
   
   .ampm {
-    -webkit-text-stroke: 2px black; /* Add a black border around the text */
+    -webkit-text-stroke: 2px black; 
     font-size: 1em;
     color: orange;
     position: relative;
-    align-self: flex-start; /* Aligns the AM/PM at the top relative to the time */
-    left: -14%; /* Adjust the margin to control spacing */
+    align-self: flex-start; 
+    left: -14%; 
     top: 70%;
   }
   
@@ -246,7 +242,7 @@
   .dark-mode {
     filter: invert(100%);
     background-color: white; 
-    .greeting,.ampm,.date-day{
+    .greeting,.ampm,.date-day,.colon{
         filter: invert();
     }
   }
