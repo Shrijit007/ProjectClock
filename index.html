@@ -10,7 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Sora:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
-</head> 
+</head>
+<!-- FULL SCREEN BUTTON -->
+<button class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode" hidden>
+	<svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
+		<g class="icon-fullscreen-enter">
+			<path d="M 2 9 v -7 h 7" />
+			<path d="M 22 9 v -7 h -7" />
+			<path d="M 22 15 v 7 h -7" />
+			<path d="M 2 15 v 7 h 7" />
+		</g>
+		
+		<g class="icon-fullscreen-leave">
+			<path d="M 24 17 h -7 v 7" />
+			<path d="M 0 17 h 7 v 7" />
+			<path d="M 0 7 h 7 v -7" />
+			<path d="M 24 7 h -7 v -7" />
+		</g>
+	</svg>
+</button>
 <!-- CLOCK ELEMENTS -->
 <div class="widget">
     <div class="greet">
@@ -121,6 +139,46 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+//full screen
+
+if(document.fullscreenEnabled || document.webkitFullscreenEnabled) {
+	const toggleBtn = document.querySelector('.js-toggle-fullscreen-btn');
+
+	const styleEl = document.createElement('link');
+	styleEl.setAttribute('rel', 'stylesheet');
+	styleEl.setAttribute('href', 'https://codepen.io/tiggr/pen/poJoLyW.css');
+	styleEl.addEventListener('load', function() {
+		toggleBtn.hidden = false;
+	});
+	document.head.appendChild(styleEl);
+	
+	toggleBtn.addEventListener('click', function() {
+		if(document.fullscreen) {
+			document.exitFullscreen();
+		} else if(document.webkitFullscreenElement) {
+			document.webkitCancelFullScreen()
+		} else if(document.documentElement.requestFullscreen) {
+			document.documentElement.requestFullscreen();
+		} else {
+			document.documentElement.webkitRequestFullScreen();
+		}
+	});
+	
+	document.addEventListener('fullscreenchange', handleFullscreen);
+	document.addEventListener('webkitfullscreenchange', handleFullscreen);
+	
+	
+	function handleFullscreen() {
+		if(document.fullscreen || document.webkitFullscreenElement) {
+			toggleBtn.classList.add('on');
+			toggleBtn.setAttribute('aria-label', 'Exit fullscreen mode');
+		} else {
+			toggleBtn.classList.remove('on');
+			toggleBtn.setAttribute('aria-label', 'Enter fullscreen mode');
+		}
+	}
+}
 
 </script>
 </body>
