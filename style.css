@@ -18,7 +18,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-  transition: background 2s;
+    transition: background 2s;
   }
 
   .widget {
@@ -253,6 +253,7 @@
 
   .dark-mode {
     background-image: url(./bg2.jpg);
+    transition: background 2s;
     .date-day,.greeting,.time-container{
        background: rgba(218, 218, 218, 0.596); 
     }
