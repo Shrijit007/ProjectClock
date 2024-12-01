@@ -1,12 +1,12 @@
 
-# ProjectClock  
+# ProjectClock 🕰️
 
 **ProjectClock** is a sleek and functional clock application built using **HTML**, **CSS**, and **JavaScript**. This project demonstrates basic and advanced JavaScript concepts, delivering a visually appealing and interactive clock interface.  
 
 Access the live project here: [ProjectClock Live Demo](https://shrijitraj-clock.netlify.app/)  
 
 # Preview
-<img src="https://github.com/Shrijit007/Portfolio/blob/main/Image/clock.png?raw=true">
+<img src="https://github.com/user-attachments/assets/1092807a-0e40-42f8-b2c0-a9c0adfb0433">
 ---
 
 ## Features  
