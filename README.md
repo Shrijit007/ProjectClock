@@ -6,7 +6,7 @@
 Access the live project here: [ProjectClock Live Demo](https://shrijitraj-clock.netlify.app/)  
 
 # Preview
-<img src="https://github.com/user-attachments/assets/1092807a-0e40-42f8-b2c0-a9c0adfb0433">
+<img src="https://github.com/Shrijit007/ProjectClock/blob/main/ss-front.png">
 ---
 
 ## Features  
